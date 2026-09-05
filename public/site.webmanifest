@@ -1,0 +1,12 @@
+{
+  "name": "宙辺 -SORABE-",
+  "short_name": "SORABE",
+  "description": "島根県津和野町、日原天文台に隣接する一日一組限定のプライベート貸切コテージ。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2efe7",
+  "theme_color": "#071014",
+  "icons": [
+    {"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}
