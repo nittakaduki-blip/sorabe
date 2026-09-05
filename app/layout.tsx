@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteUrl = 'https://sorabe-shimane.sandy-glade-8283.chatgpt.site';
+const siteUrl = 'https://sorabe-shimane.nitta-kaduki.chatgpt.site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -22,3 +22,4 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="ja"><body>{children}</body></html>;
 }
+

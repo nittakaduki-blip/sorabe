@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sorabe-shimane.sandy-glade-8283.chatgpt.site/sitemap.xml
+Sitemap: https://sorabe-shimane.nitta-kaduki.chatgpt.site/sitemap.xml
+
 

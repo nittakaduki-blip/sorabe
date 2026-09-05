@@ -10,22 +10,22 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" as="image" href="assets/night-house.webp" type="image/webp" fetchpriority="high">
-  <link rel="canonical" href="https://sorabe-shimane.sandy-glade-8283.chatgpt.site/">
+  <link rel="canonical" href="https://sorabe-shimane.nitta-kaduki.chatgpt.site/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="宙辺 -SORABE-">
   <meta property="og:title" content="宙辺 -SORABE-｜宇宙のほとりで、眠る。">
   <meta property="og:description" content="島根県津和野町、日原天文台に隣接する一日一組限定のプライベート貸切コテージ。">
-  <meta property="og:url" content="https://sorabe-shimane.sandy-glade-8283.chatgpt.site/">
-  <meta property="og:image" content="https://sorabe-shimane.sandy-glade-8283.chatgpt.site/assets/og-sorabe.jpg">
+  <meta property="og:url" content="https://sorabe-shimane.nitta-kaduki.chatgpt.site/">
+  <meta property="og:image" content="https://sorabe-shimane.nitta-kaduki.chatgpt.site/assets/og-sorabe.jpg">
   <meta property="og:image:alt" content="満天の星の下に佇む宙辺 -SORABE-">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="宙辺 -SORABE-｜宇宙のほとりで、眠る。">
   <meta name="twitter:description" content="宇宙のほとりで、眠る。島根県津和野町の一日一組限定プライベートコテージ。">
-  <meta name="twitter:image" content="https://sorabe-shimane.sandy-glade-8283.chatgpt.site/assets/og-sorabe.jpg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"宙辺 -SORABE-","url":"https://sorabe-shimane.sandy-glade-8283.chatgpt.site/","image":"https://sorabe-shimane.sandy-glade-8283.chatgpt.site/assets/og-sorabe.jpg","description":"島根県津和野町、日原天文台に隣接する一日一組限定のプライベート貸切コテージ。","telephone":"+81-6-7167-6048","email":"roofllc0415@gmail.com","address":{"@type":"PostalAddress","postalCode":"699-5207","addressRegion":"島根県","addressLocality":"鹿足郡津和野町","streetAddress":"枕瀬801-8","addressCountry":"JP"},"priceRange":"50,000円（税込・清掃費込み）／一棟1泊","sameAs":["https://www.instagram.com/sorabe_shimane","https://www.airbnb.jp/rooms/1467763166258402344"]}</script>
+  <meta name="twitter:image" content="https://sorabe-shimane.nitta-kaduki.chatgpt.site/assets/og-sorabe.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"宙辺 -SORABE-","url":"https://sorabe-shimane.nitta-kaduki.chatgpt.site/","image":"https://sorabe-shimane.nitta-kaduki.chatgpt.site/assets/og-sorabe.jpg","description":"島根県津和野町、日原天文台に隣接する一日一組限定のプライベート貸切コテージ。","telephone":"+81-6-7167-6048","email":"roofllc0415@gmail.com","address":{"@type":"PostalAddress","postalCode":"699-5207","addressRegion":"島根県","addressLocality":"鹿足郡津和野町","streetAddress":"枕瀬801-8","addressCountry":"JP"},"priceRange":"50,000円（税込・清掃費込み）／一棟1泊","sameAs":["https://www.instagram.com/sorabe_shimane","https://www.airbnb.jp/rooms/1467763166258402344"]}</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{night:'#071014',moon:'#f2efe7',forest:'#243a32',earth:'#a58d70'},fontFamily:{serif:['Yu Mincho','Hiragino Mincho ProN','serif'],sans:['Helvetica Neue','Yu Gothic','sans-serif']},letterSpacing:{lux:'.22em'}}}}</script>
   <style>
@@ -96,7 +96,7 @@
     // 予約方法をまとめたサイト内の正式な案内ページ。
     const BOOKING_URL='reservation.html';
     document.querySelectorAll('[data-booking]').forEach(link=>{link.href=BOOKING_URL});
-    document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{const data={title:'宙辺 -SORABE-',text:'日原天文台に隣接する、一日一組限定のプライベート貸切コテージ。',url:'https://sorabe-shimane.sandy-glade-8283.chatgpt.site/'};const status=document.querySelector('[data-share-status]');try{if(navigator.share){await navigator.share(data);if(status)status.textContent='共有画面を開きました。'}else{await navigator.clipboard.writeText(data.url);if(status)status.textContent='サイトのURLをコピーしました。'}}catch(error){if(error.name!=='AbortError'&&status)status.textContent='URLをコピーできませんでした。'}}));
+    document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{const data={title:'宙辺 -SORABE-',text:'日原天文台に隣接する、一日一組限定のプライベート貸切コテージ。',url:'https://sorabe-shimane.nitta-kaduki.chatgpt.site/'};const status=document.querySelector('[data-share-status]');try{if(navigator.share){await navigator.share(data);if(status)status.textContent='共有画面を開きました。'}else{await navigator.clipboard.writeText(data.url);if(status)status.textContent='サイトのURLをコピーしました。'}}catch(error){if(error.name!=='AbortError'&&status)status.textContent='URLをコピーできませんでした。'}}));
     const animated=document.querySelectorAll('.reveal,.wipe');
     if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});animated.forEach(e=>io.observe(e))}else{animated.forEach(e=>e.classList.add('on'))}
     addEventListener('scroll',()=>document.querySelector('#header').classList.toggle('bg-night/95',scrollY>40),{passive:true});
@@ -118,4 +118,5 @@
     if(ANALYTICS_ENDPOINT&&location.protocol.startsWith('http'))navigator.sendBeacon?.(ANALYTICS_ENDPOINT,JSON.stringify({path:location.pathname,referrer:document.referrer||null}));
   </script>
 </body></html>
+
 
