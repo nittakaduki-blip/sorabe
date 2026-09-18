@@ -1,5 +1,19 @@
 /* v2: independently replaces the previous motion layer. */
 .reveal{opacity:1;transform:none}.wipe{clip-path:none}
+/* One shared, static sky keeps the light sections immersive without extra animation. */
+body{background:#071014!important;color:#fff!important;isolation:isolate}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(#07101426,#07101440),url('sorabe-generated-night.webp') center/cover no-repeat}
+#concept,#facility,#access,#faq{background:transparent;color:#fff;text-shadow:0 1px 12px #0008}
+:is(#concept,#facility,#access,#faq,#facility-modal) [class*="text-night/"]{color:rgba(255,255,255,.8)}
+:is(#concept,#facility,#access,#faq,#facility-modal) .text-night{color:#fff}
+:is(#concept,#facility,#access,#faq,#facility-modal) [class*="border-night/"]{border-color:#ffffff40}
+:is(#faq,#facility-modal) [class*="divide-night/"]>:not([hidden])~:not([hidden]){border-color:#ffffff40}
+#access .bg-white{background:#ffffff14;border:1px solid #ffffff33;text-shadow:none}
+#faq [data-share]{color:#fff;border-color:#ffffff60}
+#faq a[href^="mailto:"].inline-flex{background:#ffffff14;border:1px solid #ffffff60}
+#facility-modal{background:linear-gradient(#07101466,#07101480),url('sorabe-generated-night.webp') center/cover;color:#fff}
+body>a[data-booking]{background:#071014e6;color:#fff;border:1px solid #ffffff55;backdrop-filter:blur(8px)}
+:is(#concept,#facility,#access,#faq) a:focus-visible,:is(#faq,#facility-modal) button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 #top{position:relative;min-height:100svh;background:#071014;color:#fff}
 .night-media,.night-poster,.night-video,.night-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .night-poster,.night-video{object-fit:cover;object-position:center}
