@@ -9,7 +9,7 @@
   <meta name="robots" content="index,follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/observatory-stars.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/sorabe-generated-night.webp" type="image/webp" fetchpriority="high">
   <link rel="canonical" href="https://sorabe-shimane.nitta-kaduki.chatgpt.site/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
@@ -38,26 +38,30 @@
     summary::-webkit-details-marker{display:none}[data-booking][aria-disabled="true"]{cursor:not-allowed;opacity:.62}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.wipe{clip-path:none}.hero-brand{opacity:1}.hero-slide:first-child,.bbq-slide:first-child{opacity:1;transform:none}}
   </style>
   <noscript><style>.reveal{opacity:1;transform:none}.wipe{clip-path:none}.hero-brand{opacity:1}.hero-slide:first-child,.bbq-slide:first-child{opacity:1;transform:none}</style></noscript>
-  <link rel="stylesheet" href="assets/sorabe-motion.css">
-  <script src="assets/sorabe-motion.js" defer></script>
+  <link rel="stylesheet" href="assets/night-experience.css">
+  <script src="assets/night-experience.js" defer></script>
 </head>
 <body class="overflow-x-hidden bg-moon text-night font-sans antialiased">
-  <canvas id="stardust" aria-hidden="true"></canvas>
+  <canvas id="night-dust" aria-hidden="true"></canvas>
   <header class="fixed inset-x-0 top-0 z-50 flex h-20 items-center px-5 text-white transition-colors lg:px-12" id="header">
     <a href="#top" class="flex flex-col leading-none"><span class="font-serif text-2xl tracking-lux">宙辺</span><small class="mt-1 text-[8px] tracking-[.5em]">SORABE</small></a>
     <nav class="mx-auto hidden gap-7 text-[9px] tracking-lux lg:flex"><a href="#concept">CONCEPT</a><a href="#experience">EXPERIENCE</a><a href="#options">OPTIONS</a><a href="#facility">FACILITY</a><a href="#access">ACCESS</a><a href="#stay">STAY</a></nav>
-          <a href="reservation.html" data-booking class="border border-white/60 px-6 py-3 text-[10px] tracking-lux hover:bg-white hover:text-night">空室確認・ご予約</a>
+    <div class="header-actions">
+      <a class="instagram-link" href="https://www.instagram.com/sorabe_shimane/" target="_blank" rel="noopener noreferrer" aria-label="宙辺のInstagramを開く（新しいタブ）"><span class="instagram-glyph" aria-hidden="true"></span><span class="instagram-label">INSTAGRAM</span></a>
+      <a href="reservation.html" data-booking class="border border-white/60 px-6 py-3 text-[10px] tracking-lux hover:bg-white hover:text-night">空室確認・ご予約</a>
+    </div>
   </header>
 
   <main>
     <section id="top" class="relative min-h-svh overflow-hidden bg-night text-white">
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/observatory-stars.webp" alt="" class="hero-poster" fetchpriority="high" decoding="async">
-        <!-- Existing real photograph with slow camera motion; not a field timelapse. -->
-        <video class="hero-video" data-src="assets/sorabe-night-loop.mp4" poster="assets/observatory-stars.webp" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1"></video>
+      <div class="night-media" aria-hidden="true">
+        <img src="assets/sorabe-generated-night.webp" alt="" class="night-poster" fetchpriority="high" decoding="async">
+        <!-- Generated mood imagery, not documentation of the actual facility or sky. -->
+        <video class="night-video" data-src="assets/sorabe-generated-night.mp4" poster="assets/sorabe-generated-night.webp" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1"></video>
       </div>
-      <div class="hero-shade"></div>
-      <button type="button" class="motion-control" data-motion-control aria-pressed="false" hidden>演出を停止</button>
+      <div class="night-overlay"></div>
+      <button type="button" class="night-pause" data-night-pause aria-pressed="false" hidden>演出を停止</button>
+      <p class="night-credit">星空のイメージ映像</p>
       <div class="hero-brand relative flex min-h-svh flex-col items-center justify-center px-6 text-center"><p class="text-[9px] tracking-[.35em]">PRIVATE COTTAGE / TSUWANO, SHIMANE</p><h1 class="mt-9 font-serif text-7xl tracking-[.22em] md:text-9xl">宙辺</h1><p class="mt-5 text-xs tracking-[.65em]">SORABE</p><h2 class="mt-10 font-serif text-xl tracking-[.14em] md:text-3xl">宇宙のほとりで、眠る。</h2><a href="#concept" class="mt-12 border-b border-white/60 pb-3 text-[10px] tracking-lux">SCROLL TO DISCOVER ↓</a></div>
     </section>
 
@@ -65,7 +69,7 @@
 
     <section id="experience" class="bg-night py-28 text-moon md:py-40"><header class="mx-auto max-w-7xl px-6 md:px-10"><p class="text-[9px] tracking-[.3em] text-white/50">02 / EXPERIENCE</p><h2 class="mt-7 font-serif text-4xl tracking-widest md:text-6xl">ここでしかできない夜。</h2><div class="photo mt-12 h-[58vw] max-h-[620px] overflow-hidden md:mt-16"><img src="assets/starry-sky-new.webp" alt="日原天文台と満天の星空" class="h-full w-full object-cover" loading="lazy" decoding="async"></div></header><div class="mx-auto mt-20 max-w-7xl space-y-24 px-6 md:px-10">
       <article class="reveal"><span class="text-[9px] tracking-[.3em] text-white/50">STARRY SKY</span><h3 class="mt-5 font-serif text-3xl leading-relaxed md:text-5xl">望遠鏡を覗いたあとも、<br>星を見る時間は終わらない。</h3><p class="mt-6 max-w-2xl font-serif text-sm leading-8 text-white/70">玄関の外は、明かりの少ない山の夜。日原天文台で宇宙を見たあと、自分たちだけの一棟へ戻ります。</p><div class="photo mt-10 h-[58vw] max-h-[540px] overflow-hidden"><img src="assets/cottage-interior-new.webp" alt="ビリヤード台のある開放的な館内" class="h-full w-full object-cover" loading="lazy" decoding="async"></div></article>
-      <article class="grid items-start gap-9 md:grid-cols-[1.2fr_.8fr] md:gap-16"><div class="photo wipe h-[62vw] max-h-[540px] overflow-hidden"><img src="assets/billiards.webp" alt="ビリヤード台のあるプレイルーム" class="h-full w-full object-cover" loading="lazy" decoding="async"></div><div class="reveal"><span class="text-[9px] tracking-[.3em] text-white/50">ENTERTAINMENT</span><h3 class="mt-5 font-serif text-3xl leading-relaxed md:text-5xl">星のあとも、<br>夜を終わらせない。</h3><p class="mt-6 font-serif text-sm leading-8 text-white/70">ビリヤード、卓球、ボードゲーム。プロジェクターでは映像配信サービスを楽しんだり、みんなでゲームをしたり。外が静かになるほど、一棟の内側にはみんなの声が残ります。</p><div class="photo mt-10 h-64 overflow-hidden"><img src="assets/projector-game-new.webp" alt="プロジェクターの大画面でゲームを楽しむ様子" class="h-full w-full object-cover" loading="lazy" decoding="async"></div></div></article>
+      <article class="entertainment-story"><div class="reveal"><span class="text-[9px] tracking-[.3em] text-white/50">ENTERTAINMENT</span><h3 class="mt-5 font-serif text-3xl leading-relaxed md:text-5xl">星のあとも、<br>夜を終わらせない。</h3><p class="mt-6 max-w-2xl font-serif text-sm leading-8 text-white/70">ビリヤード、卓球、ボードゲーム。プロジェクターでは映像配信サービスを楽しんだり、みんなでゲームをしたり。外が静かになるほど、一棟の内側にはみんなの声が残ります。</p></div><div class="photo projector-feature"><img src="assets/projector-game-new.webp" alt="プロジェクターの大画面でゲームを楽しむ様子" loading="lazy" decoding="async"></div></article>
     </div></section>
 
     <section id="options" class="grid bg-forest text-moon md:grid-cols-2"><div class="photo relative h-[72vw] max-h-[680px] overflow-hidden"><img src="assets/bbq.webp" alt="火を囲むBBQ" class="bbq-slide absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async"><img src="assets/bbq-outdoor-new.webp" alt="日原天文台を望む屋外の焚き火スペース" class="bbq-slide absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async"><span class="absolute inset-0 bg-gradient-to-b from-night/65 via-transparent to-night/25"></span><div class="absolute left-7 top-8 md:left-10 md:top-12"><p class="text-[9px] tracking-[.3em] text-white/65">03 / OPTIONS &amp; DINING</p><h2 class="mt-5 font-serif text-4xl leading-relaxed text-white md:text-6xl">火と食卓を、<br>夜の真ん中に。</h2></div></div><div class="flex items-center px-7 py-20 md:px-16"><div><p class="max-w-md font-serif text-sm leading-8 text-white/70">火を囲む時間を、滞在に合わせて追加できます。薪・食材・炭等はご持参ください。</p><dl class="mt-8 w-full max-w-md divide-y divide-white/15 border-y border-white/15 text-xs"><div class="flex justify-between gap-6 py-4"><dt>焚き火台</dt><dd>5,500円（税込）</dd></div><div class="flex justify-between gap-6 py-4"><dt>BBQグリル</dt><dd>5,500円（税込）</dd></div><div class="flex justify-between gap-6 py-4"><dt>無煙ロースター</dt><dd>5,500円（税込）</dd></div></dl></div></div></section>
