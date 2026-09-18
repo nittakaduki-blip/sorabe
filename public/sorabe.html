@@ -9,7 +9,7 @@
   <meta name="robots" content="index,follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/night-house.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/observatory-stars.webp" type="image/webp" fetchpriority="high">
   <link rel="canonical" href="https://sorabe-shimane.nitta-kaduki.chatgpt.site/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
@@ -38,8 +38,11 @@
     summary::-webkit-details-marker{display:none}[data-booking][aria-disabled="true"]{cursor:not-allowed;opacity:.62}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.wipe{clip-path:none}.hero-brand{opacity:1}.hero-slide:first-child,.bbq-slide:first-child{opacity:1;transform:none}}
   </style>
   <noscript><style>.reveal{opacity:1;transform:none}.wipe{clip-path:none}.hero-brand{opacity:1}.hero-slide:first-child,.bbq-slide:first-child{opacity:1;transform:none}</style></noscript>
+  <link rel="stylesheet" href="assets/sorabe-motion.css">
+  <script src="assets/sorabe-motion.js" defer></script>
 </head>
 <body class="overflow-x-hidden bg-moon text-night font-sans antialiased">
+  <canvas id="stardust" aria-hidden="true"></canvas>
   <header class="fixed inset-x-0 top-0 z-50 flex h-20 items-center px-5 text-white transition-colors lg:px-12" id="header">
     <a href="#top" class="flex flex-col leading-none"><span class="font-serif text-2xl tracking-lux">宙辺</span><small class="mt-1 text-[8px] tracking-[.5em]">SORABE</small></a>
     <nav class="mx-auto hidden gap-7 text-[9px] tracking-lux lg:flex"><a href="#concept">CONCEPT</a><a href="#experience">EXPERIENCE</a><a href="#options">OPTIONS</a><a href="#facility">FACILITY</a><a href="#access">ACCESS</a><a href="#stay">STAY</a></nav>
@@ -48,8 +51,13 @@
 
   <main>
     <section id="top" class="relative min-h-svh overflow-hidden bg-night text-white">
-      <div class="absolute inset-0" aria-label="宙辺の施設写真スライドショー"><img src="assets/night-house.webp" alt="満天の星の下に佇む宙辺" class="hero-slide absolute inset-0 h-full w-full object-cover" fetchpriority="high" decoding="async"><img src="assets/observatory-stars.webp" alt="星空と日原天文台" class="hero-slide absolute inset-0 h-full w-full object-cover" decoding="async"><img src="assets/living.webp" alt="森に面したリビング" class="hero-slide absolute inset-0 h-full w-full object-cover" decoding="async"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-night/40 via-transparent to-night/80"></div>
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/observatory-stars.webp" alt="" class="hero-poster" fetchpriority="high" decoding="async">
+        <!-- Existing real photograph with slow camera motion; not a field timelapse. -->
+        <video class="hero-video" data-src="assets/sorabe-night-loop.mp4" poster="assets/observatory-stars.webp" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1"></video>
+      </div>
+      <div class="hero-shade"></div>
+      <button type="button" class="motion-control" data-motion-control aria-pressed="false" hidden>演出を停止</button>
       <div class="hero-brand relative flex min-h-svh flex-col items-center justify-center px-6 text-center"><p class="text-[9px] tracking-[.35em]">PRIVATE COTTAGE / TSUWANO, SHIMANE</p><h1 class="mt-9 font-serif text-7xl tracking-[.22em] md:text-9xl">宙辺</h1><p class="mt-5 text-xs tracking-[.65em]">SORABE</p><h2 class="mt-10 font-serif text-xl tracking-[.14em] md:text-3xl">宇宙のほとりで、眠る。</h2><a href="#concept" class="mt-12 border-b border-white/60 pb-3 text-[10px] tracking-lux">SCROLL TO DISCOVER ↓</a></div>
     </section>
 

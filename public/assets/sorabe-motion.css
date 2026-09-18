@@ -1,0 +1,21 @@
+/* Progressive enhancement: content and the real-photo poster always remain visible. */
+.reveal{opacity:1;transform:none}.wipe{clip-path:none}
+.hero-media,.hero-poster,.hero-video{position:absolute;inset:0;width:100%;height:100%}
+.hero-poster,.hero-video{object-fit:cover;object-position:center;pointer-events:none}
+.hero-video{opacity:0;transition:opacity 1.8s ease-out}
+.hero-video.is-playing{opacity:1}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,16,20,.38),rgba(7,16,20,.2) 35%,rgba(7,16,20,.72));pointer-events:none}
+.hero-brand{z-index:3;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+#stardust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30;opacity:.65}
+.motion-control{position:absolute;left:1.5rem;bottom:1.5rem;z-index:4;min-height:44px;padding:.7rem 1rem;border:1px solid rgba(255,255,255,.35);background:rgba(7,16,20,.3);color:#fff;font:12px/1.4 'Yu Gothic',sans-serif;letter-spacing:.12em;backdrop-filter:blur(8px)}
+.motion-control:hover,.motion-control:focus-visible{background:rgba(7,16,20,.7);border-color:#fff}
+.type-line{display:block}
+.type-ready:not(.type-visible) .type-line{opacity:0;transform:translateY(18px)}
+.type-ready .type-line{transition:opacity 1.3s cubic-bezier(.16,1,.3,1),transform 1.5s cubic-bezier(.16,1,.3,1);transition-delay:var(--line-delay,0ms)}
+.type-visible .type-line{opacity:1;transform:none}
+.motion-paused .type-line{opacity:1!important;transform:none!important;transition:none!important}
+.motion-paused #stardust{display:none}
+.motion-paused .bbq-slide{animation:none;opacity:0;transform:none}
+.motion-paused .bbq-slide:first-child{opacity:1}
+@media(max-width:640px){.motion-control{left:1rem;bottom:1rem;padding:.6rem .8rem;font-size:12px}#stardust{opacity:.45}}
+@media(prefers-reduced-motion:reduce){.hero-video,#stardust{display:none!important}.type-line{opacity:1!important;transform:none!important;transition:none!important}.hero-video{transition:none}.hero-shade{background:linear-gradient(180deg,rgba(7,16,20,.38),rgba(7,16,20,.25),rgba(7,16,20,.72))}}
