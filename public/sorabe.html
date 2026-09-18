@@ -9,7 +9,7 @@
   <meta name="robots" content="index,follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/milkyway-scroll-v7.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/night-house.webp" type="image/webp" fetchpriority="high">
   <link rel="canonical" href="https://sorabe-shimane.nitta-kaduki.chatgpt.site/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
@@ -38,11 +38,11 @@
     summary::-webkit-details-marker{display:none}[data-booking][aria-disabled="true"]{cursor:not-allowed;opacity:.62}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.wipe{clip-path:none}.hero-brand{opacity:1}.hero-slide:first-child,.bbq-slide:first-child{opacity:1;transform:none}}
   </style>
   <noscript><style>.reveal{opacity:1;transform:none}.wipe{clip-path:none}.hero-brand{opacity:1}.hero-slide:first-child,.bbq-slide:first-child{opacity:1;transform:none}</style></noscript>
-  <link rel="stylesheet" href="assets/night-experience-v7.css">
-  <script src="assets/night-experience-v7.js" defer></script>
+  <link rel="stylesheet" href="assets/night-experience-v8.css">
+  <script src="assets/night-experience-v8.js" defer></script>
 </head>
 <body class="overflow-x-hidden bg-night text-white font-sans antialiased">
-  <div id="scroll-sky" aria-hidden="true"><img src="assets/milkyway-scroll-v7.webp" alt="" fetchpriority="high" decoding="async"></div>
+  <div id="scroll-sky" aria-hidden="true"><img src="assets/milkyway-hires-v8.webp" alt="" decoding="async"></div>
   <canvas id="night-dust" aria-hidden="true"></canvas>
   <header class="fixed inset-x-0 top-0 z-50 flex h-20 items-center px-5 text-white transition-colors lg:px-12" id="header">
     <a href="#top" class="flex flex-col leading-none"><span class="font-serif text-2xl tracking-lux">宙辺</span><small class="mt-1 text-[8px] tracking-[.5em]">SORABE</small></a>
@@ -55,14 +55,8 @@
 
   <main>
     <section id="top" class="relative min-h-svh overflow-hidden bg-night text-white">
-      <div class="night-media" aria-hidden="true">
-        <img src="assets/sorabe-generated-night.webp" alt="" class="night-poster" fetchpriority="high" decoding="async">
-        <!-- Generated mood imagery, not documentation of the actual facility or sky. -->
-        <video class="night-video" data-src="assets/sorabe-generated-night.mp4" poster="assets/sorabe-generated-night.webp" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1"></video>
-      </div>
+      <div class="night-media"><img src="assets/night-house.webp" alt="宙辺のコテージ入口の夜景" class="night-poster" fetchpriority="high" decoding="async"></div>
       <div class="night-overlay"></div>
-      <button type="button" class="night-pause" data-night-pause aria-pressed="false" hidden>演出を停止</button>
-      <p class="night-credit">星空のイメージ</p>
       <div class="hero-brand relative flex min-h-svh flex-col items-center justify-center px-6 text-center"><p class="text-[9px] tracking-[.35em]">PRIVATE COTTAGE / TSUWANO, SHIMANE</p><h1 class="mt-9 font-serif text-7xl tracking-[.22em] md:text-9xl">宙辺</h1><p class="mt-5 text-xs tracking-[.65em]">SORABE</p><h2 class="mt-10 font-serif text-xl tracking-[.14em] md:text-3xl">宇宙のほとりで、眠る。</h2><a href="#concept" class="mt-12 border-b border-white/60 pb-3 text-[10px] tracking-lux">SCROLL TO DISCOVER ↓</a></div>
     </section>
 
