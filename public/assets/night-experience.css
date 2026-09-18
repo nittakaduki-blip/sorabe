@@ -30,7 +30,8 @@ body>a[data-booking]{background:#071014e6;color:#fff;border:1px solid #ffffff55;
 .night-video.is-playing{opacity:1}
 .night-overlay{background:linear-gradient(180deg,#040a1240,#040a124d 55%,#071014b3)}
 .hero-brand{position:relative;z-index:3;opacity:1;min-height:100svh;text-shadow:0 2px 24px #0008}
-#night-dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30;opacity:.8}
+/* Above the sky, below all content: photos naturally occlude every particle. */
+#night-dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.8}
 .night-pause{position:absolute;left:1.5rem;bottom:5.5rem;z-index:4;min-height:44px;padding:.65rem 1rem;border:1px solid #ffffff55;background:#07101466;color:#fff;font-size:12px;letter-spacing:.12em;backdrop-filter:blur(8px)}
 .night-pause:hover,.night-pause:focus-visible{border-color:#fff;background:#071014cc}
 .night-credit{position:absolute;right:1.5rem;bottom:5.5rem;z-index:4;color:#ffffff80;font-size:12px;letter-spacing:.08em}
