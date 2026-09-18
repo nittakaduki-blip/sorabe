@@ -3,7 +3,11 @@
 /* Paint backgrounds directly: no negative layers or fixed-background compositing. */
 body{background:#071014!important;color:#fff!important}
 body::before{content:none}
-#concept,#experience,#options,#facility,#access,#stay,#faq,body>footer{background-color:#071014;background-image:linear-gradient(#07101426,#07101440),url('sorabe-generated-night.webp');background-position:center;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;color:#fff}
+#scroll-sky{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#071014}
+#scroll-sky img{display:block;width:100%;height:max(100svh,300vw);object-fit:cover;transform:translate3d(0,var(--sky-offset,0px),0);will-change:transform}
+#scroll-sky::after{content:'';position:absolute;inset:0;background:linear-gradient(#07101426,#07101440)}
+body>main,body>footer{position:relative;z-index:1}
+#concept,#experience,#options,#facility,#access,#stay,#faq,body>footer{background:transparent;color:#fff}
 #concept,#facility,#access,#faq{text-shadow:0 1px 12px #0008}
 #stay>div>div.bg-white\/15{background:transparent}
 #stay article.bg-night{background:#07101499;border:1px solid #ffffff26}
@@ -17,12 +21,13 @@ body::before{content:none}
 #facility-modal{background:linear-gradient(#07101466,#07101480),url('sorabe-generated-night.webp') center/cover;color:#fff}
 body>a[data-booking]{background:#071014e6;color:#fff;border:1px solid #ffffff55;backdrop-filter:blur(8px)}
 :is(#concept,#facility,#access,#faq) a:focus-visible,:is(#faq,#facility-modal) button:focus-visible{outline:2px solid #fff;outline-offset:4px}
-#top{position:relative;min-height:100svh;background:#071014;color:#fff}
+#top{position:relative;min-height:100svh;background:transparent;color:#fff}
+.night-media{display:none}
 .night-media,.night-poster,.night-video,.night-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .night-poster,.night-video{object-fit:cover;object-position:center}
 .night-video{opacity:0;transition:opacity 1.8s ease-out}
 .night-video.is-playing{opacity:1}
-.night-overlay{background:linear-gradient(180deg,rgba(4,10,18,.3),rgba(4,10,18,.12) 45%,rgba(4,10,18,.6))}
+.night-overlay{background:linear-gradient(180deg,rgba(4,10,18,.12),transparent 70%)}
 .hero-brand{position:relative;z-index:3;opacity:1;min-height:100svh;text-shadow:0 2px 24px #0008}
 #night-dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30;opacity:.8}
 .night-pause{position:absolute;left:1.5rem;bottom:5.5rem;z-index:4;min-height:44px;padding:.65rem 1rem;border:1px solid #ffffff55;background:#07101466;color:#fff;font-size:12px;letter-spacing:.12em;backdrop-filter:blur(8px)}

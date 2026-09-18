@@ -43,7 +43,7 @@
     headingObserver.observe(heading);
   });
 
-  const video = document.querySelector('.night-video');
+  const video = document.querySelector('#scroll-sky') ? null : document.querySelector('.night-video');
   const hero = document.querySelector('#top');
   const control = document.querySelector('[data-night-pause]');
   let heroVisible = true, playRevision = 0;
@@ -69,6 +69,14 @@
 
   const canvas = document.querySelector('#night-dust');
   const ctx = canvas?.getContext('2d', { alpha: true });
+  const sky = document.querySelector('#scroll-sky img');
+  let meteor = null, nextMeteor = 6000;
+  function moveSky() {
+    if (!sky) return;
+    const travel = Math.max(0, sky.getBoundingClientRect().height - innerHeight);
+    const progress = Math.min(1, Math.max(0, scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)));
+    sky.style.setProperty('--sky-offset', `${-travel * progress}px`);
+  }
   let w = 0, h = 0, stars = [], frame = 0, lastFrame = 0;
   let target = scrollY, position = target, velocity = 0;
   function resize() {
@@ -82,6 +90,7 @@
       y: ((i * .41421356237 + .2) % 1) * h,
       depth: .04 + (i % 6) * .022, r: .55 + (i % 4) * .32, phase: i * 2.17,
     }));
+    moveSky();
   }
   function draw(time) {
     if (!ctx || !enabled() || document.hidden) { frame = 0; return; }
@@ -99,6 +108,22 @@
       ctx.fillStyle = '#e7edf4';
       ctx.beginPath(); ctx.arc(x, y, star.r, 0, Math.PI * 2); ctx.fill();
     });
+    if (!meteor && time > nextMeteor) {
+      meteor = { start: time, x: w * (.45 + Math.random() * .45), y: h * (.08 + Math.random() * .3) };
+      nextMeteor = time + 14000 + Math.random() * 16000;
+    }
+    if (meteor) {
+      const age = (time - meteor.start) / 1250;
+      if (age >= 1) meteor = null;
+      else {
+        const distance = Math.min(w * .42, 420), x = meteor.x - age * distance, y = meteor.y + age * distance * .55;
+        const tail = Math.min(w * .15, 135), gradient = ctx.createLinearGradient(x, y, x + tail, y - tail * .55);
+        gradient.addColorStop(0, '#f4f7ff'); gradient.addColorStop(1, '#dce7ff00');
+        ctx.globalAlpha = Math.sin(Math.PI * age) * .65;
+        ctx.strokeStyle = gradient; ctx.lineWidth = 1.4;
+        ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + tail, y - tail * .55); ctx.stroke();
+      }
+    }
     ctx.globalAlpha = 1;
   }
   function sync() {
@@ -106,6 +131,7 @@
     if (!enabled()) {
       if (frame) cancelAnimationFrame(frame);
       frame = 0; ctx?.clearRect(0, 0, w, h);
+      meteor = null;
       headings.forEach(heading => heading.classList.add('headline-visible'));
     } else if (!frame && !document.hidden && ctx) frame = requestAnimationFrame(draw);
     if (control) {
@@ -118,7 +144,10 @@
   control?.addEventListener('click', () => { paused = !paused; sync(); });
   reduced.addEventListener('change', sync);
   connection?.addEventListener('change', sync);
-  addEventListener('scroll', () => { target = scrollY; }, { passive: true });
+  let skyFrame = 0;
+  addEventListener('scroll', () => { target = scrollY; if (!skyFrame) skyFrame = requestAnimationFrame(() => { moveSky(); skyFrame = 0; }); }, { passive: true });
+  sky?.addEventListener('load', moveSky);
+  if ('ResizeObserver' in window && sky) new ResizeObserver(moveSky).observe(document.body);
   addEventListener('resize', resize, { passive: true });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && frame) { cancelAnimationFrame(frame); frame = 0; }
