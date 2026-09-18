@@ -1,9 +1,12 @@
 /* v2: independently replaces the previous motion layer. */
 .reveal{opacity:1;transform:none}.wipe{clip-path:none}
-/* One shared, static sky keeps the light sections immersive without extra animation. */
-body{background:#071014!important;color:#fff!important;isolation:isolate}
-body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(#07101426,#07101440),url('sorabe-generated-night.webp') center/cover no-repeat}
-#concept,#facility,#access,#faq{background:transparent;color:#fff;text-shadow:0 1px 12px #0008}
+/* Paint backgrounds directly: no negative layers or fixed-background compositing. */
+body{background:#071014!important;color:#fff!important}
+body::before{content:none}
+#concept,#experience,#options,#facility,#access,#stay,#faq,body>footer{background-color:#071014;background-image:linear-gradient(#07101426,#07101440),url('sorabe-generated-night.webp');background-position:center;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;color:#fff}
+#concept,#facility,#access,#faq{text-shadow:0 1px 12px #0008}
+#stay>div>div.bg-white\/15{background:transparent}
+#stay article.bg-night{background:#07101499;border:1px solid #ffffff26}
 :is(#concept,#facility,#access,#faq,#facility-modal) [class*="text-night/"]{color:rgba(255,255,255,.8)}
 :is(#concept,#facility,#access,#faq,#facility-modal) .text-night{color:#fff}
 :is(#concept,#facility,#access,#faq,#facility-modal) [class*="border-night/"]{border-color:#ffffff40}
