@@ -1,0 +1,17 @@
+:root{color-scheme:light}
+.sorabe-subpage{min-height:100vh;background:#f2efe7;color:#071014;font-family:"Helvetica Neue","Yu Gothic",sans-serif}
+.sorabe-subpage::before{content:"";position:fixed;inset:0 0 auto;height:18rem;z-index:-1;background:linear-gradient(180deg,#071714 0%,#132a25 72%,transparent 100%)}
+.sorabe-subpage>header{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2;border-color:#ffffff24!important;background:#071714;color:#fff}
+.sorabe-subpage .page-brand{display:inline-flex;align-items:baseline;gap:.6rem;color:#fff;text-decoration:none}
+.sorabe-subpage .page-brand::after{content:"";display:block;width:2.5rem;height:1px;margin-left:.6rem;background:#ffffff66;transition:width .35s ease}
+.sorabe-subpage .page-brand:hover::after{width:4rem}
+.page-utility{display:flex;align-items:center;gap:.65rem}
+.page-utility a,.sorabe-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.65rem 1rem;border:1px solid currentColor;text-decoration:none;font-size:.72rem;letter-spacing:.16em;transition:background .25s,color .25s,border-color .25s}
+.page-utility a{color:#fff;border-color:#ffffff55}.page-utility a:hover{background:#fff;color:#071014}
+.sorabe-subpage main{position:relative}.sorabe-subpage main a:not(.sorabe-link){text-decoration-color:#07101455;text-underline-offset:.25em}
+.sorabe-subpage footer a{position:relative;color:#fff;text-decoration:none;padding-bottom:.35rem}
+.sorabe-subpage footer a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:#fff;transition:right .3s ease}
+.sorabe-subpage footer a:hover::after{right:0}
+.contact-field{display:grid;gap:.55rem}.contact-field label{font-family:"Yu Mincho","Hiragino Mincho ProN",serif}.contact-field input,.contact-field textarea,.contact-field select{width:100%;border:1px solid #07101433;background:#fff;padding:.9rem 1rem;font:inherit}.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{outline:2px solid #243a32;outline-offset:2px}
+.contact-status{display:none;border-left:2px solid #243a32;background:#fff;padding:1rem 1.2rem}.contact-status.is-visible{display:block}
+@media(max-width:640px){.page-utility{gap:.35rem}.page-utility a{min-height:40px;padding:.55rem .65rem;font-size:.65rem}.sorabe-subpage .page-brand::after{display:none}}
