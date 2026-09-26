@@ -1,0 +1,56 @@
+/* Desktop editorial layout inspired by the clear image-and-copy rhythm of hotel sites. */
+@media (min-width: 900px){
+  #experience>header{
+    display:grid;
+    grid-template-columns:minmax(15rem,.55fr) minmax(0,1.45fr);
+    grid-template-rows:auto 1fr;
+    column-gap:clamp(3rem,7vw,8rem);
+    align-items:center;
+  }
+  #experience>header>p{grid-column:1;grid-row:1;align-self:end}
+  #experience>header>h2{grid-column:1;grid-row:2;align-self:start;margin-top:1.6rem;font-size:clamp(2.5rem,3.6vw,3.5rem);line-height:1.55;letter-spacing:.08em}
+  #experience>header>.photo{grid-column:2;grid-row:1/3;margin-top:0!important}
+  #experience>div>article{
+    display:grid;
+    grid-template-columns:minmax(16rem,.72fr) minmax(0,1.28fr);
+    grid-template-rows:auto auto 1fr;
+    column-gap:clamp(3rem,7vw,8rem);
+    align-items:center;
+  }
+  #experience>div>article>span,
+  #experience>div>article>h3,
+  #experience>div>article>p{grid-column:1}
+  #experience>div>article>span{grid-row:1;align-self:end}
+  #experience>div>article>h3{grid-row:2}
+  #experience>div>article>p{grid-row:3;align-self:start}
+  #experience>div>article>.photo{grid-column:2;grid-row:1/4;margin-top:0!important}
+  #experience>div>article:nth-child(even){grid-template-columns:minmax(0,1.28fr) minmax(16rem,.72fr)}
+  #experience>div>article:nth-child(even)>span,
+  #experience>div>article:nth-child(even)>h3,
+  #experience>div>article:nth-child(even)>p{grid-column:2}
+  #experience>div>article:nth-child(even)>.photo{grid-column:1}
+  #experience>div>article.entertainment-story>.reveal{grid-column:2;grid-row:1;align-self:center}
+  #experience>div>article.entertainment-story>.photo{grid-column:1;grid-row:1}
+  #options .mt-14.grid{grid-template-columns:1fr}
+  #options .option-card{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(18rem,.82fr);min-height:34rem}
+  #options .option-card:nth-child(even){grid-template-columns:minmax(18rem,.82fr) minmax(0,1.18fr)}
+  #options .option-card:nth-child(even)>.photo{grid-column:2;grid-row:1}
+  #options .option-card:nth-child(even)>.option-copy{grid-column:1;grid-row:1}
+  #options .option-card>.photo{height:100%!important;min-height:34rem}
+  #options .option-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,5vw,5rem)}
+}
+
+.phone-reservation{position:relative;z-index:1;padding:clamp(5rem,10vw,9rem) 1.5rem;background:linear-gradient(135deg,#10241f,#071014 70%);color:#f2efe7;text-align:center;border-top:1px solid #ffffff1f;border-bottom:1px solid #ffffff1f}
+.phone-reservation::before{content:"";position:absolute;left:50%;top:2.5rem;width:1px;height:3rem;background:linear-gradient(transparent,#ffffff8c)}
+.phone-reservation__inner{max-width:72rem;margin:auto}
+.phone-reservation__eyebrow{font-size:.68rem;letter-spacing:.34em;color:#ffffff80}
+.phone-reservation h2{margin-top:1.6rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:400;letter-spacing:.12em}
+.phone-reservation__number{display:inline-flex;align-items:baseline;gap:1rem;margin-top:2rem;color:#fff;text-decoration:none;font-family:"Helvetica Neue",sans-serif;font-size:clamp(2rem,6vw,5rem);font-weight:300;letter-spacing:.06em;line-height:1.1}
+.phone-reservation__number span{font-size:.68rem;letter-spacing:.28em;color:#ffffff80}
+.phone-reservation__hours{margin-top:1.6rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:.9rem;line-height:2;color:#ffffffb3}
+.phone-reservation__hours small{font-size:.72rem;color:#ffffff73}
+.phone-reservation__actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:48rem;margin:2.8rem auto 0;border:1px solid #ffffff40}
+.phone-reservation__actions a{display:flex;align-items:center;justify-content:space-between;min-height:5rem;padding:1.25rem 1.6rem;color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:.16em;transition:background .3s,color .3s}
+.phone-reservation__actions a+a{border-left:1px solid #ffffff40}
+.phone-reservation__actions a:hover{background:#f2efe7;color:#071014}
+@media (max-width:640px){.phone-reservation__number{gap:.55rem}.phone-reservation__actions{grid-template-columns:1fr}.phone-reservation__actions a+a{border-left:0;border-top:1px solid #ffffff40}}
