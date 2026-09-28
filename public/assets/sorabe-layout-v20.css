@@ -1,0 +1,109 @@
+/* Desktop editorial layout inspired by the clear image-and-copy rhythm of hotel sites. */
+@media (min-width: 1100px){
+  #experience>header{
+    display:grid;
+    grid-template-columns:minmax(15rem,.55fr) minmax(0,1.45fr);
+    grid-template-rows:auto 1fr;
+    column-gap:clamp(3rem,7vw,8rem);
+    align-items:center;
+  }
+  #experience>header>p{grid-column:1;grid-row:1;align-self:end}
+  #experience>header>h2{grid-column:1;grid-row:2;align-self:start;margin-top:1.6rem;font-size:clamp(2.5rem,3.6vw,3.5rem);line-height:1.55;letter-spacing:.08em}
+  #experience>header>.photo{grid-column:2;grid-row:1/3;margin-top:0!important}
+  #experience>header>.photo,
+  #experience>div>article>.photo{
+    height:min(70vh,44rem)!important;
+    max-height:calc(100vh - 8rem)!important;
+    background:transparent;
+    border-radius:clamp(1.25rem,2vw,2rem);
+  }
+  #experience>header>.photo img,
+  #experience>div>article>.photo img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  #experience>header>.night-carousel,
+  #experience>div>article>.portrait-night-photo{
+    width:min(68vh,43rem,100%);
+    height:min(68vh,43rem)!important;
+    aspect-ratio:1/1;
+    justify-self:center;
+  }
+  #experience>div>article>.projector-feature{height:auto!important;aspect-ratio:3/2;max-height:70vh!important}
+  #experience>div>article{
+    display:grid;
+    grid-template-columns:minmax(20rem,.85fr) minmax(0,1.15fr);
+    grid-template-rows:auto auto 1fr;
+    column-gap:clamp(3rem,7vw,8rem);
+    align-items:center;
+  }
+  #experience>div>article>span,
+  #experience>div>article>h3,
+  #experience>div>article>p{grid-column:1}
+  #experience>div>article>span{grid-row:1;align-self:end}
+  #experience>div>article>h3{grid-row:2}
+  #experience>div>article>h3{font-size:clamp(1.85rem,2.55vw,2.55rem);line-height:1.7}
+  #experience>div>article>p{grid-row:3;align-self:start}
+  #experience>div>article>.photo{grid-column:2;grid-row:1/4;margin-top:0!important}
+  #experience>div>article:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(20rem,.85fr)}
+  #experience>div>article:nth-child(even)>span,
+  #experience>div>article:nth-child(even)>h3,
+  #experience>div>article:nth-child(even)>p{grid-column:2}
+  #experience>div>article:nth-child(even)>.photo{grid-column:1}
+  #experience>div>article.entertainment-story>.reveal{grid-column:2;grid-row:1;align-self:center}
+  #experience>div>article.entertainment-story>.photo{grid-column:1;grid-row:1}
+}
+
+.night-carousel,.portrait-night-photo{position:relative;aspect-ratio:1/1;border-radius:clamp(1.5rem,3vw,2.5rem);overflow:hidden;background:transparent}
+.night-carousel__slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity 1.15s ease,visibility 1.15s ease}
+.night-carousel__slide.is-active{opacity:1;visibility:visible}
+.night-carousel__slide img,.portrait-night-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.night-carousel__slide img{object-position:center 58%}
+.portrait-night-photo img{object-position:center 66%}
+.night-carousel__dots{position:absolute;z-index:2;right:1.1rem;bottom:1rem;display:flex;gap:.55rem;padding:.55rem .65rem;border-radius:999px;background:#07101480;backdrop-filter:blur(8px)}
+.night-carousel__dots button{width:.45rem;height:.45rem;border-radius:50%;background:#ffffff70;transition:width .3s,background .3s}
+.night-carousel__dots button.is-active{width:1.35rem;border-radius:999px;background:#fff}
+.projector-feature,.option-card,#facility .facility-card{border-radius:clamp(1rem,2vw,1.75rem)}
+
+.indoor-option-panel{padding:clamp(1.5rem,3vw,2.5rem);border:1px solid #ffffff24;border-radius:clamp(1rem,2vw,1.75rem);background:#07101430}
+.option-detail-card{overflow:hidden;border:1px solid #ffffff24;border-radius:1.25rem;background:#10241f;color:#fff;transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.option-detail-card:hover{transform:translateY(-4px);border-color:#ffffff70;background:#18362d}
+.option-detail-card:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.option-detail-card__image{display:block;aspect-ratio:4/3;overflow:hidden}
+.option-detail-card__image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.option-detail-card:hover .option-detail-card__image img{transform:scale(1.025)!important}
+.option-detail-card__copy{display:block;padding:1.35rem}
+.option-detail-card__copy small{display:block;font-size:.55rem;letter-spacing:.22em;color:#ffffff80}
+.option-detail-card__copy b{display:block;margin-top:.7rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.35rem;font-weight:400}
+.option-detail-card__copy>span{display:block;margin-top:.65rem;font-size:.72rem;line-height:1.8;color:#ffffffa8}
+.option-detail-card__copy i{display:block;margin-top:1rem;font-size:.62rem;font-style:normal;letter-spacing:.14em;color:#ffffffc7}
+
+:is(h1,h2,h3,.option-copy p,.phone-reservation h2){
+  line-break:strict;
+  word-break:normal;
+  overflow-wrap:break-word;
+  text-wrap:pretty;
+}
+
+.phone-reservation{position:relative;z-index:1;padding:clamp(5rem,10vw,9rem) 1.5rem;background:linear-gradient(135deg,#10241f,#071014 70%);color:#f2efe7;text-align:center;border-top:1px solid #ffffff1f;border-bottom:1px solid #ffffff1f}
+.phone-reservation::before{content:"";position:absolute;left:50%;top:2.5rem;width:1px;height:3rem;background:linear-gradient(transparent,#ffffff8c)}
+.phone-reservation__inner{max-width:72rem;margin:auto}
+.phone-reservation__eyebrow{font-size:.68rem;letter-spacing:.34em;color:#ffffff80}
+.phone-reservation h2{margin-top:1.6rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:400;letter-spacing:.12em}
+.phone-reservation__number{display:inline-flex;align-items:baseline;gap:1rem;margin-top:2rem;color:#fff;text-decoration:none;font-family:"Helvetica Neue",sans-serif;font-size:clamp(2rem,6vw,5rem);font-weight:300;letter-spacing:.06em;line-height:1.1}
+.phone-reservation__number span{font-size:.68rem;letter-spacing:.28em;color:#ffffff80}
+.phone-reservation__hours{margin-top:1.6rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:.9rem;line-height:2;color:#ffffffb3}
+.phone-reservation__hours small{font-size:.72rem;color:#ffffff73}
+.phone-reservation__actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:48rem;margin:2.8rem auto 0;border:1px solid #ffffff40}
+.phone-reservation__actions a{display:flex;align-items:center;justify-content:space-between;min-height:5rem;padding:1.25rem 1.6rem;color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:.16em;transition:background .3s,color .3s}
+.phone-reservation__actions a+a{border-left:1px solid #ffffff40}
+.phone-reservation__actions a:hover{background:#f2efe7;color:#071014}
+@media (max-width:640px){.phone-reservation__number{gap:.55rem}.phone-reservation__actions{grid-template-columns:1fr}.phone-reservation__actions a+a{border-left:0;border-top:1px solid #ffffff40}}
+
+@media (max-width:1099px){
+  .night-carousel,.portrait-night-photo{width:100%;height:auto!important;max-height:none!important;aspect-ratio:1/1}
+  .projector-feature{border-radius:1.25rem}
+}
+
+@media (prefers-reduced-motion:reduce){.night-carousel__slide{transition:none}.option-detail-card,.option-detail-card__image img{transition:none}}
