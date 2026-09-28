@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sorabe-shimane.nitta-kaduki.chatgpt.site/sitemap.xml
+Sitemap: https://sorabe.jp/sitemap.xml
 
 
