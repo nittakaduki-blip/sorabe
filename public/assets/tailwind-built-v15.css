@@ -1165,6 +1165,11 @@
     padding-inline: calc(var(--spacing) * 12);
   }
 }
+.xl\:grid-cols-4 {
+  @media (width >= 80rem) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
