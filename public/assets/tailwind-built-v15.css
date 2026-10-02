@@ -308,9 +308,6 @@
 .inline-flex {
   display: inline-flex;
 }
-.aspect-\[4\/3\] {
-  aspect-ratio: 4/3;
-}
 .aspect-\[16\/10\] {
   aspect-ratio: 16/10;
 }
@@ -482,14 +479,6 @@
     border-color: color-mix(in srgb, #071014 15%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-night) 15%, transparent);
-    }
-  }
-}
-.divide-white\/15 {
-  :where(& > :not(:last-child)) {
-    border-color: color-mix(in srgb, #fff 15%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-white) 15%, transparent);
     }
   }
 }
@@ -719,8 +708,8 @@
 .pt-10 {
   padding-top: calc(var(--spacing) * 10);
 }
-.pt-14 {
-  padding-top: calc(var(--spacing) * 14);
+.pt-12 {
+  padding-top: calc(var(--spacing) * 12);
 }
 .pt-16 {
   padding-top: calc(var(--spacing) * 16);
@@ -1052,6 +1041,11 @@
     display: inline-flex;
   }
 }
+.md\:max-w-2xl {
+  @media (width >= 48rem) {
+    max-width: var(--container-2xl);
+  }
+}
 .md\:grid-cols-2 {
   @media (width >= 48rem) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1165,11 +1159,6 @@
 .lg\:hidden {
   @media (width >= 64rem) {
     display: none;
-  }
-}
-.lg\:grid-cols-2 {
-  @media (width >= 64rem) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 .lg\:grid-cols-3 {
