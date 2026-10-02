@@ -47,7 +47,6 @@
   --default-mono-font-family: var(--font-mono);
   --color-night: #071014;
   --color-moon: #f2efe7;
-  --color-forest: #243a32;
   --tracking-lux: .22em;
 }
 @layer base {
@@ -312,6 +311,9 @@
 .aspect-\[4\/3\] {
   aspect-ratio: 4/3;
 }
+.aspect-\[16\/10\] {
+  aspect-ratio: 16/10;
+}
 .h-11 {
   height: calc(var(--spacing) * 11);
 }
@@ -506,6 +508,9 @@
 .scroll-smooth {
   scroll-behavior: smooth;
 }
+.rounded-\[1\.75rem\] {
+  border-radius: 1.75rem;
+}
 .border {
   border-style: var(--tw-border-style);
   border-width: 1px;
@@ -561,6 +566,12 @@
     border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
   }
 }
+.border-white\/35 {
+  border-color: color-mix(in srgb, #fff 35%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    border-color: color-mix(in oklab, var(--color-white) 35%, transparent);
+  }
+}
 .border-white\/45 {
   border-color: color-mix(in srgb, #fff 45%, transparent);
   @supports (color: color-mix(in lab, red, red)) {
@@ -578,9 +589,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     border-color: color-mix(in oklab, var(--color-white) 60%, transparent);
   }
-}
-.bg-forest {
-  background-color: var(--color-forest);
 }
 .bg-moon {
   background-color: var(--color-moon);
@@ -602,6 +610,12 @@
 }
 .bg-white {
   background-color: var(--color-white);
+}
+.bg-white\/5 {
+  background-color: color-mix(in srgb, #fff 5%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+  }
 }
 .bg-white\/20 {
   background-color: color-mix(in srgb, #fff 20%, transparent);
@@ -704,6 +718,9 @@
 }
 .pt-10 {
   padding-top: calc(var(--spacing) * 10);
+}
+.pt-14 {
+  padding-top: calc(var(--spacing) * 14);
 }
 .pt-16 {
   padding-top: calc(var(--spacing) * 16);
