@@ -7,9 +7,8 @@ body::before{content:none}
 #scroll-sky img{display:block;width:100%;height:max(115svh,65vw);object-fit:cover;transform:translate3d(0,var(--sky-offset,0px),0);will-change:transform}
 #scroll-sky::after{content:'';position:absolute;inset:0;background:linear-gradient(#07101426,#07101440)}
 body>main,body>footer{position:relative;z-index:1}
-#concept,#experience,#options,#facility,#access,#stay,#faq,body>footer{background:transparent;color:#fff}
-#concept,#facility,#access,#faq{text-shadow:0 1px 12px #0008}
-#stay{background:#071014!important}
+#concept,#concept-stories,#experience,#options,#facility,#access,#stay,#faq,body>footer{background:transparent!important;color:#fff}
+#concept,#concept-stories,#facility,#access,#stay,#faq{text-shadow:0 1px 12px #0008}
 .stay-summary article{background:#0d1a1f;border:1px solid #ffffff20;padding:2rem}
 :is(#concept,#facility,#access,#faq,#facility-modal) [class*="text-night/"]{color:rgba(255,255,255,.8)}
 :is(#concept,#facility,#access,#faq,#facility-modal) .text-night{color:#fff}

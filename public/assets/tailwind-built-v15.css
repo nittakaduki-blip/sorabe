@@ -290,6 +290,9 @@
 .mt-20 {
   margin-top: calc(var(--spacing) * 20);
 }
+.mt-24 {
+  margin-top: calc(var(--spacing) * 24);
+}
 .block {
   display: block;
 }
@@ -781,6 +784,9 @@
 }
 .text-\[clamp\(1\.75rem\,8\.5vw\,3rem\)\] {
   font-size: clamp(1.75rem, 8.5vw, 3rem);
+}
+.text-\[clamp\(2rem\,9vw\,3\.75rem\)\] {
+  font-size: clamp(2rem, 9vw, 3.75rem);
 }
 .leading-6 {
   --tw-leading: calc(var(--spacing) * 6);
