@@ -67,27 +67,22 @@ main .text-xs{font-size:.875rem}
 @media(prefers-reduced-motion:reduce){.night-video,#night-dust{display:none!important}.headline-letter{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* Family stay: a warmer editorial block that keeps the established SORABE tone. */
-.family-stay{overflow:hidden;border-radius:2rem;background:#e9dfcd;color:#071014;box-shadow:0 1.5rem 4rem #07101414}
-.family-stay__intro{display:grid;gap:2rem;padding:2rem;border-bottom:1px solid #0710141f}
-.family-stay__intro>p{font-size:.625rem;letter-spacing:.3em;color:#07101480}
-.family-stay__intro h3{font-family:serif;font-size:clamp(2rem,6vw,3.75rem);line-height:1.45;letter-spacing:.08em}
-.family-stay__intro div p{max-width:33rem;font-family:serif;font-size:.875rem;line-height:2;color:#071014b3}
-.family-stay__intro a{display:inline-block;margin-top:1.25rem;border-bottom:1px solid #07101466;padding-bottom:.5rem;font-size:.625rem;letter-spacing:.18em}
-.family-stay__audiences{display:grid;border-bottom:1px solid #0710141f;background:#f8f2e8}
-.family-stay__audiences p{display:grid;grid-template-columns:2rem 1fr;gap:.35rem 1rem;padding:1.5rem 2rem;border-bottom:1px solid #0710141a}
-.family-stay__audiences p:last-child{border-bottom:0}
-.family-stay__audiences small{grid-row:1/3;font-size:.625rem;letter-spacing:.15em;color:#07101466}
-.family-stay__audiences strong{font-family:serif;font-size:1.125rem;font-weight:400;letter-spacing:.05em}
-.family-stay__audiences span{font-size:.6875rem;line-height:1.7;color:#07101499}
-.family-stay__scenes{display:grid;gap:1px;background:#0710141f}
-.family-stay__scenes article{background:#f3ecdf}
+.family-stay{overflow:hidden;border:1px solid #ffffff26;border-radius:2rem;background:linear-gradient(120deg,#02070dd9,#071014ad),url("milkyway-hires-v8.webp") center/cover;color:#fff;box-shadow:0 1.5rem 4rem #0710143d}
+.family-stay__intro{display:grid;gap:2rem;padding:2rem;border-bottom:1px solid #ffffff26}
+.family-stay__intro>p{font-size:.625rem;letter-spacing:.3em;color:#ffffff8c}
+.family-stay__intro h3{font-family:serif;font-size:clamp(1.3rem,6vw,3.75rem);line-height:1.45;letter-spacing:.06em}
+.family-stay__intro h3 span{display:block;white-space:nowrap}
+.family-stay__intro div p{max-width:33rem;font-family:serif;font-size:.875rem;line-height:2;color:#ffffffb8}
+.family-stay__intro a{display:inline-block;margin-top:1.25rem;border-bottom:1px solid #ffffff70;padding-bottom:.5rem;font-size:.625rem;letter-spacing:.18em}
+.family-stay__scenes{display:grid;gap:1px;background:#ffffff26}
+.family-stay__scenes article{background:#071014d9}
 .family-stay__scenes img{width:100%;aspect-ratio:16/10;object-fit:cover}
 .family-stay__scenes article>div{padding:1.5rem}
-.family-stay__scenes small{font-size:.5625rem;letter-spacing:.2em;color:#07101480}
+.family-stay__scenes small{font-size:.5625rem;letter-spacing:.2em;color:#ffffff73}
 .family-stay__scenes h4{margin-top:.75rem;font-family:serif;font-size:1.35rem;letter-spacing:.04em}
-.family-stay__scenes p{margin-top:.75rem;font-size:.75rem;line-height:1.9;color:#071014a6}
-.family-stay__note{padding:1.25rem 2rem;font-size:.6875rem;line-height:1.9;letter-spacing:.04em;color:#07101499}
-@media(min-width:768px){.family-stay__intro{grid-template-columns:.45fr 1fr 1fr;align-items:start;padding:3.5rem}.family-stay__audiences{grid-template-columns:repeat(3,1fr)}.family-stay__audiences p{border-right:1px solid #0710141a;border-bottom:0}.family-stay__audiences p:last-child{border-right:0}.family-stay__scenes{grid-template-columns:repeat(3,1fr)}.family-stay__note{padding:1.5rem 3.5rem}}
+.family-stay__scenes p{margin-top:.75rem;font-size:.75rem;line-height:1.9;color:#ffffffa6}
+.family-stay__note{padding:1.25rem 2rem;font-size:.6875rem;line-height:1.9;letter-spacing:.04em;color:#ffffff99}
+@media(min-width:768px){.family-stay__intro{grid-template-columns:.45fr 1fr 1fr;align-items:start;padding:3.5rem}.family-stay__scenes{grid-template-columns:repeat(3,1fr)}.family-stay__note{padding:1.5rem 3.5rem}}
 
 /* Simple title reveal, matched to the user's Tsuwano project. */
 .site-loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:#071714;color:#f2efe7;transition:opacity .72s ease,visibility 0s linear .72s}
