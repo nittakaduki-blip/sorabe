@@ -63,7 +63,7 @@ main .text-xs{font-size:.875rem}
 .night-still .headline-letter{opacity:1!important;transform:none!important;transition:none!important}
 .night-still .bbq-slide{animation:none;opacity:0;transform:none}.night-still .bbq-slide:first-child{opacity:1}
 @media(max-width:1279px){.instagram-label{display:none}}
-@media(max-width:640px){#header{padding-left:1rem;padding-right:.5rem}.header-actions{gap:.2rem}.instagram-link{display:none}.header-actions [data-booking]{padding:.65rem .75rem;letter-spacing:.08em}.booking-long{display:none}.booking-short{display:inline}.booking-float{right:.75rem;bottom:.75rem;width:auto;min-width:11.5rem;min-height:2.75rem;padding:0 .9rem;font-size:.6875rem}.night-pause{left:1rem;bottom:6.5rem}.night-credit{right:1rem;bottom:5rem;font-size:12px}.projector-feature{aspect-ratio:4/3;margin-top:2rem}#night-dust{opacity:.65}.stay-summary article,.option-copy{padding:1.5rem}}
+@media(max-width:640px){#header{padding-left:1rem;padding-right:.5rem}.header-actions{gap:.2rem}.instagram-link,.header-actions [data-booking]{display:none}.booking-long{display:none}.booking-short{display:inline}.booking-float{right:.75rem;bottom:.75rem;width:auto;min-width:11.5rem;min-height:2.75rem;padding:0 .9rem;font-size:.6875rem}.night-pause{left:1rem;bottom:6.5rem}.night-credit{right:1rem;bottom:5rem;font-size:12px}.projector-feature{aspect-ratio:4/3;margin-top:2rem}#night-dust{opacity:.65}.stay-summary article,.option-copy{padding:1.5rem}}
 @media(prefers-reduced-motion:reduce){.night-video,#night-dust{display:none!important}.headline-letter{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* Simple title reveal, matched to the user's Tsuwano project. */
