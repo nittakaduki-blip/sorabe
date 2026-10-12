@@ -66,6 +66,23 @@ main .text-xs{font-size:.875rem}
 @media(max-width:640px){#header{padding-left:1rem;padding-right:.5rem}.header-actions{gap:.2rem}.instagram-link,.header-actions [data-booking]{display:none}.booking-long{display:none}.booking-short{display:inline}.booking-float{right:.75rem;bottom:.75rem;width:auto;min-width:11.5rem;min-height:2.75rem;padding:0 .9rem;font-size:.6875rem}.night-pause{left:1rem;bottom:6.5rem}.night-credit{right:1rem;bottom:5rem;font-size:12px}.projector-feature{aspect-ratio:4/3;margin-top:2rem}#night-dust{opacity:.65}.stay-summary article,.option-copy{padding:1.5rem}}
 @media(prefers-reduced-motion:reduce){.night-video,#night-dust{display:none!important}.headline-letter{opacity:1!important;transform:none!important;transition:none!important}}
 
+/* Family stay: a warmer editorial block that keeps the established SORABE tone. */
+.family-stay{overflow:hidden;border-radius:2rem;background:#e9dfcd;color:#071014;box-shadow:0 1.5rem 4rem #07101414}
+.family-stay__intro{display:grid;gap:2rem;padding:2rem;border-bottom:1px solid #0710141f}
+.family-stay__intro>p{font-size:.625rem;letter-spacing:.3em;color:#07101480}
+.family-stay__intro h3{font-family:serif;font-size:clamp(2rem,6vw,3.75rem);line-height:1.45;letter-spacing:.08em}
+.family-stay__intro div p{max-width:33rem;font-family:serif;font-size:.875rem;line-height:2;color:#071014b3}
+.family-stay__intro a{display:inline-block;margin-top:1.25rem;border-bottom:1px solid #07101466;padding-bottom:.5rem;font-size:.625rem;letter-spacing:.18em}
+.family-stay__scenes{display:grid;gap:1px;background:#0710141f}
+.family-stay__scenes article{background:#f3ecdf}
+.family-stay__scenes img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.family-stay__scenes article>div{padding:1.5rem}
+.family-stay__scenes small{font-size:.5625rem;letter-spacing:.2em;color:#07101480}
+.family-stay__scenes h4{margin-top:.75rem;font-family:serif;font-size:1.35rem;letter-spacing:.04em}
+.family-stay__scenes p{margin-top:.75rem;font-size:.75rem;line-height:1.9;color:#071014a6}
+.family-stay__note{padding:1.25rem 2rem;font-size:.6875rem;line-height:1.9;letter-spacing:.04em;color:#07101499}
+@media(min-width:768px){.family-stay__intro{grid-template-columns:.45fr 1fr 1fr;align-items:start;padding:3.5rem}.family-stay__scenes{grid-template-columns:repeat(3,1fr)}.family-stay__note{padding:1.5rem 3.5rem}}
+
 /* Simple title reveal, matched to the user's Tsuwano project. */
 .site-loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:#071714;color:#f2efe7;transition:opacity .72s ease,visibility 0s linear .72s}
 .site-loader::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,#263f382e,transparent 38%);opacity:0;animation:loaderGlow 1.1s ease forwards}
