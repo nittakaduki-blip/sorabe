@@ -1,5 +1,6 @@
 /* Experience-led redesign. Existing room dialogs and booking information retained. */
 :root{--paper:#f4f1ea;--ink:#273d37;--muted:#64716a;--line:#273d3726}
+.journey-step figcaption{margin-top:9px;font-size:10px;line-height:1.6;color:var(--muted)}
 main>section:not(#top),main>section:not(#top) *{text-shadow:none!important}
 section[id]{scroll-margin-top:95px}
 html{scroll-behavior:smooth}body{background:var(--paper)!important;color:var(--ink)!important}
