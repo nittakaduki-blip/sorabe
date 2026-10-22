@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteUrl = 'https://sorabe-shimane.nitta-kaduki.chatgpt.site';
+const siteUrl = 'https://sorabe.jp';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -1115,16 +1115,6 @@
     line-height: var(--tw-leading, var(--text-9xl--line-height));
   }
 }
-.lg\:flex {
-  @media (width >= 64rem) {
-    display: flex;
-  }
-}
-.lg\:hidden {
-  @media (width >= 64rem) {
-    display: none;
-  }
-}
 .lg\:grid-cols-3 {
   @media (width >= 64rem) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1133,6 +1123,16 @@
 .lg\:px-12 {
   @media (width >= 64rem) {
     padding-inline: calc(var(--spacing) * 12);
+  }
+}
+.xl\:flex {
+  @media (width >= 80rem) {
+    display: flex;
+  }
+}
+.xl\:hidden {
+  @media (width >= 80rem) {
+    display: none;
   }
 }
 .xl\:grid-cols-4 {
