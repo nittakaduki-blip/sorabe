@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sorabe.jp/sitemap.xml
+Sitemap: https://nittakaduki-blip.github.io/sorabe/sitemap.xml
 
 

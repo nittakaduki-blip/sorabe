@@ -22,6 +22,15 @@ export type CmsContent = {
     observatoryTitle: string;
     observatoryBody: string;
   };
+  stay: {
+    currentPrice: string;
+    currentPriceNote: string;
+    renovationHeading: string;
+    renovationBody: string;
+    saunaStatus: string;
+    bathStatus: string;
+    indoorBbqStatus: string;
+  };
   updatedAt: string | null;
 };
 
@@ -54,6 +63,15 @@ export const defaultCmsContent: CmsContent = {
     observatoryTitle: "日原天文台",
     observatoryBody: "宙辺に隣接する天文台です。休館日・開館時間・観望内容は公式サイトでご確認ください。",
   },
+  stay: {
+    currentPrice: "50,000円",
+    currentPriceNote: "一棟貸切・1泊。税込、清掃費・寝具料金込み。宿泊可能人数・利用できる客室は工事期間とプランにより変わるため、希望日を伝えて確認してください。",
+    renovationHeading: "これからの宙辺に、新しい過ごし方を。",
+    renovationBody: "サウナ・大浴場・屋内BBQは2027年4月の完成を予定しています。完成時期、仕様、料金、予約条件は確定後に更新します。",
+    saunaStatus: "2027年4月完成予定／利用条件・料金は準備中",
+    bathStatus: "2027年4月完成予定／利用条件・料金は準備中",
+    indoorBbqStatus: "改修後に計画中／利用条件・料金は準備中",
+  },
   updatedAt: null,
 };
 
@@ -75,6 +93,7 @@ export function normalizeCmsContent(value: unknown): CmsContent {
   const hero = input.hero && typeof input.hero === "object" ? input.hero as Record<string, unknown> : {};
   const journey = input.journey && typeof input.journey === "object" ? input.journey as Record<string, unknown> : {};
   const tourism = input.tourism && typeof input.tourism === "object" ? input.tourism as Record<string, unknown> : {};
+  const stay = input.stay && typeof input.stay === "object" ? input.stay as Record<string, unknown> : {};
   const rawSteps = Array.isArray(journey.steps) ? journey.steps : [];
 
   return {
@@ -101,6 +120,15 @@ export function normalizeCmsContent(value: unknown): CmsContent {
       tsuwanoBody: cleanText(tourism.tsuwanoBody, defaultCmsContent.tourism.tsuwanoBody),
       observatoryTitle: cleanText(tourism.observatoryTitle, defaultCmsContent.tourism.observatoryTitle, 80),
       observatoryBody: cleanText(tourism.observatoryBody, defaultCmsContent.tourism.observatoryBody),
+    },
+    stay: {
+      currentPrice: cleanText(stay.currentPrice, defaultCmsContent.stay.currentPrice, 80),
+      currentPriceNote: cleanText(stay.currentPriceNote, defaultCmsContent.stay.currentPriceNote),
+      renovationHeading: cleanText(stay.renovationHeading, defaultCmsContent.stay.renovationHeading, 120),
+      renovationBody: cleanText(stay.renovationBody, defaultCmsContent.stay.renovationBody),
+      saunaStatus: cleanText(stay.saunaStatus, defaultCmsContent.stay.saunaStatus, 160),
+      bathStatus: cleanText(stay.bathStatus, defaultCmsContent.stay.bathStatus, 160),
+      indoorBbqStatus: cleanText(stay.indoorBbqStatus, defaultCmsContent.stay.indoorBbqStatus, 160),
     },
     updatedAt: typeof input.updatedAt === "string" ? input.updatedAt : null,
   };

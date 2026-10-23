@@ -65,4 +65,11 @@
   setText("[data-cms='tourism.tsuwanoBody'], #tsuwano-guide h3 + p", content.tourism?.tsuwanoBody);
   setText("[data-cms='tourism.observatoryTitle'], #experience .tourism-card + article h3", content.tourism?.observatoryTitle);
   setText("[data-cms='tourism.observatoryBody'], #experience .tourism-card + article h3 + p", content.tourism?.observatoryBody);
+  setText("[data-cms='stay.currentPrice']", content.stay?.currentPrice);
+  setText("[data-cms='stay.currentPriceNote']", content.stay?.currentPriceNote);
+  setText("[data-cms='stay.renovationHeading']", content.stay?.renovationHeading);
+  setText("[data-cms='stay.renovationBody']", content.stay?.renovationBody);
+  setText("[data-cms='stay.saunaStatus']", content.stay?.saunaStatus);
+  setText("[data-cms='stay.bathStatus']", content.stay?.bathStatus);
+  setText("[data-cms='stay.indoorBbqStatus']", content.stay?.indoorBbqStatus);
 })();

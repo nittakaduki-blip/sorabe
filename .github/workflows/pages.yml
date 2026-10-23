@@ -29,7 +29,6 @@ jobs:
           mkdir -p _site
           cp -R public/. _site/
           cp _site/sorabe.html _site/index.html
-          printf 'sorabe.jp\n' > _site/CNAME
           touch _site/.nojekyll
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -45,7 +45,7 @@ export default function CmsEditor({ initialContent }: { initialContent: CmsConte
   return (
     <main className={styles.shell}>
       <header className={styles.header}>
-        <div><p className={styles.kicker}>SORABE CONTENT MANAGEMENT</p><h1>宙辺 CMS</h1><p>トップページの主要な文章と、1泊のスケジュールを編集できます。</p></div>
+        <div><p className={styles.kicker}>SORABE CONTENT MANAGEMENT</p><h1>宙辺 CMS</h1><p>トップページの文章、1泊のスケジュール、料金と改修予定を編集できます。</p></div>
         <div className={styles.actions}><a href="/" target="_blank" rel="noreferrer">公開ページを見る ↗</a><button type="button" onClick={save} disabled={saving}>{saving ? "保存中…" : "変更を保存"}</button></div>
       </header>
 
@@ -79,6 +79,19 @@ export default function CmsEditor({ initialContent }: { initialContent: CmsConte
           <div><h3>津和野</h3><label>タイトル<input value={content.tourism.tsuwanoTitle} onChange={(event) => setContent({ ...content, tourism: { ...content.tourism, tsuwanoTitle: event.target.value } })} /></label><label>本文<textarea rows={4} value={content.tourism.tsuwanoBody} onChange={(event) => setContent({ ...content, tourism: { ...content.tourism, tsuwanoBody: event.target.value } })} /></label></div>
           <div><h3>日原天文台</h3><label>タイトル<input value={content.tourism.observatoryTitle} onChange={(event) => setContent({ ...content, tourism: { ...content.tourism, observatoryTitle: event.target.value } })} /></label><label>本文<textarea rows={4} value={content.tourism.observatoryBody} onChange={(event) => setContent({ ...content, tourism: { ...content.tourism, observatoryBody: event.target.value } })} /></label></div>
         </div>
+      </section>
+
+      <section className={styles.card}>
+        <div className={styles.sectionHeading}><span>04</span><div><h2>料金・改修予定</h2><p>現在の宿泊料金と、2027年4月に向けた設備情報を更新できます。</p></div></div>
+        <div className={styles.columns}>
+          <div><h3>現在の宿泊料金</h3><label>表示金額<input value={content.stay.currentPrice} onChange={(event) => setContent({ ...content, stay: { ...content.stay, currentPrice: event.target.value } })} /></label><label>料金の説明<textarea rows={5} value={content.stay.currentPriceNote} onChange={(event) => setContent({ ...content, stay: { ...content.stay, currentPriceNote: event.target.value } })} /></label></div>
+          <div><h3>改修後の案内</h3><label>見出し<input value={content.stay.renovationHeading} onChange={(event) => setContent({ ...content, stay: { ...content.stay, renovationHeading: event.target.value } })} /></label><label>説明<textarea rows={5} value={content.stay.renovationBody} onChange={(event) => setContent({ ...content, stay: { ...content.stay, renovationBody: event.target.value } })} /></label></div>
+        </div>
+        <div className={styles.columns}>
+          <label>サウナの表示<input value={content.stay.saunaStatus} onChange={(event) => setContent({ ...content, stay: { ...content.stay, saunaStatus: event.target.value } })} /></label>
+          <label>大浴場の表示<input value={content.stay.bathStatus} onChange={(event) => setContent({ ...content, stay: { ...content.stay, bathStatus: event.target.value } })} /></label>
+        </div>
+        <label>屋内BBQの表示<input value={content.stay.indoorBbqStatus} onChange={(event) => setContent({ ...content, stay: { ...content.stay, indoorBbqStatus: event.target.value } })} /></label>
       </section>
 
       <footer className={styles.footer}><p role="status" aria-live="polite">{status}</p><button type="button" onClick={save} disabled={saving}>{saving ? "保存中…" : "変更を保存"}</button></footer>
