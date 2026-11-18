@@ -33,16 +33,18 @@ for (const page of pages) {
     html = html.replace('>EN</a>', '>JP</a>');
     html = html.replace('href="en.html" lang="en">English / EN</a>', 'href="index.html" lang="ja">Japanese / JP</a>');
     html = html.replace('hreflang="en" href="https://sorabe-tsuwano.github.io/en.html"', 'hreflang="ja" href="https://sorabe-tsuwano.github.io/"');
+    html = html.replace('<span class="booking-long">Check availability and plans</span>', '<span class="booking-long">Book your stay</span>');
     html = html.replace("url:'https://sorabe-tsuwano.github.io/'", "url:'https://sorabe-tsuwano.github.io/en.html'");
     html = html.replace('<small class="mt-1 text-[8px] tracking-[.5em]">SORABE</small>', '<small class="mt-1 text-[8px] tracking-[.5em]">TSUWANO</small>');
     html = html.replace('<p class="mt-5 text-xs tracking-[.65em]">SORABE</p>', '<p class="mt-5 text-xs tracking-[.65em]">TSUWANO</p>');
-    html = html.replace('</head>', '<style>html[lang="en"] .journey-title-line{white-space:normal}html[lang="en"] #facility .whitespace-nowrap{white-space:normal}html[lang="en"] .journey-copy{max-width:520px}</style></head>');
+    html = html.replace('</head>', '<style>html[lang="en"] .journey-title-line{white-space:normal}html[lang="en"] #facility .whitespace-nowrap{white-space:normal}html[lang="en"] .journey-copy{max-width:520px}@media(min-width:1280px){html[lang="en"] #header>nav{gap:.7rem;font-size:10px;letter-spacing:.08em}html[lang="en"] #header .header-actions{gap:.5rem}html[lang="en"] #header [data-booking]{padding:.75rem 1rem}html[lang="en"] #header .instagram-label{display:none}}</style></head>');
   } else {
     html = html.replace(/(<nav class="page-utility"[^>]*>)/, `$1<a href="${page}.html" lang="ja">Japanese / JP</a>`);
     html = html.replace(`https://sorabe-tsuwano.github.io/${page}.html`, `https://sorabe-tsuwano.github.io/${page}-en.html`);
     html = html.replace('rel="canonical"', `rel="alternate" hreflang="ja" href="${url}${page}.html"><link rel="canonical"`);
   }
   if (page === 'chillnn') html = html.replace('</main>', '<p><a href="chillnn.html" lang="ja">Japanese / JP</a></p></main>');
+  html = html.replaceAll('subject=SORABEContact', 'subject=SORABE%20inquiry');
   html = html.replaceAll('<small class="font-sans text-[9px]">SORABE</small>', '<small class="font-sans text-[9px]">TSUWANO</small>');
   html = html.replace(/[ \t]+(?=\r?$)/gm, '').trimEnd() + '\n';
   const destination = path.join(pub, page === 'sorabe' ? 'en.html' : `${page}-en.html`);
