@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -R public/. _site/
-          cp _site/sorabe.html _site/index.html
+          cp _site/en.html _site/index.html
           touch _site/.nojekyll
       - name: Configure Pages
         uses: actions/configure-pages@v5
