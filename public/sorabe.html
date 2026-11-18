@@ -138,7 +138,7 @@
     function closeSiteLoader(){if(loaderClosed||!siteLoader)return;loaderClosed=true;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const wait=Math.max(0,(reduced?0:650)-(performance.now()-loaderStarted));setTimeout(()=>{siteLoader.classList.add('is-leaving');setTimeout(()=>siteLoader.remove(),reduced?180:760)},wait)}
     if(document.readyState==='complete')requestAnimationFrame(closeSiteLoader);else addEventListener('load',closeSiteLoader,{once:true});setTimeout(closeSiteLoader,2200);
     // 予約方法をまとめたサイト内の正式な案内ページ。
-    const BOOKING_URL='reservation.html';
+    const BOOKING_URL='https://www.chillnn.com/1a1eef04b2c293';
     document.querySelectorAll('[data-booking]').forEach(link=>{link.href=BOOKING_URL;link.removeAttribute('target');link.removeAttribute('rel')});document.querySelectorAll('.mobile-menu a').forEach(link=>link.addEventListener('click',()=>link.closest('details').removeAttribute('open')));
     document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{const data={title:'宙辺 -SORABE-',text:'日原天文台に隣接する、一日一組限定のプライベート貸切コテージ。',url:'https://sorabe-tsuwano.github.io/'};const status=document.querySelector('[data-share-status]');try{if(navigator.share){await navigator.share(data);if(status)status.textContent='共有画面を開きました。'}else{await navigator.clipboard.writeText(data.url);if(status)status.textContent='サイトのURLをコピーしました。'}}catch(error){if(error.name!=='AbortError'&&status)status.textContent='URLをコピーできませんでした。'}}));
     const animated=document.querySelectorAll('.reveal,.wipe');
